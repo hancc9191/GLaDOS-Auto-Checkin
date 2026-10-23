@@ -13,10 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     # ✅ 白名单：手动触发 或者 上面两个签到cron才执行签到；每月1号保活触发直接跳过
-    if: >
-      github.event_name == 'workflow_dispatch'
-      || github.event.schedule == '05 23 * * *'
-      || github.event.schedule == '07 09 * * *'
+    
     concurrency:
       group: glados-checkin
       cancel-in-progress: false
